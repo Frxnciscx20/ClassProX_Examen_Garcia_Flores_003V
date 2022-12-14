@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar style="background-color: purple;">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ClassProX</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-card class="ion-text-center">
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="fixed">Asignatura: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.nom" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="fixed">Fecha: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario2.nom2" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="fixed">Hora: </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario3.nom3" required></ion-input>
+        </ion-item>
+
+
+        <ion-button 
+            expand="block" 
+            class=button-general 
+            (click)="generaScan()">
+            Generate QR Code  
+        </ion-button>
+
+        <ion-button 
+            expand="block" 
+            class=button-general 
+           (click)="generaScan2()">
+            Generate QR Code  
+        </ion-button>
+
+        <ion-button 
+            expand="block" 
+            class=button-general 
+            (click)="generaScan3()">
+            Generate QR Code  
+        </ion-button>
+
+        <qrcode 
+          [qrdata]="qrCodeString" 
+          [width]="256" 
+          [errorCorrectionLevel]="'M'">
+        </qrcode>
+
+
+      </ion-card-content>
+   </ion-card>
+
+   <ion-button class= button-general
+      expand="block"  
+      (click)="verScan()">
+          Ver QR Code  
+    </ion-button>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">Scan Result: {{scannedResult}}</ion-label>
+    </ion-item>
+
+    <ion-button class= button-general
+    expand="block"  
+    (click)="verScan2()">
+        Ver QR Code  
+  </ion-button>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">Scan Result: {{scannedResult2}}</ion-label>
+    </ion-item>
+
+    <ion-button class= button-general
+    expand="block"  
+    (click)="verScan3()">
+        Ver QR Code  
+  </ion-button>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">Scan Result: {{scannedResult3}}</ion-label>
+    </ion-item>
+</ion-content>
